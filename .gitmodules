@@ -1,0 +1,9 @@
+[submodule "bundle/zencoding-vim"]
+	path = bundle/zencoding-vim
+	url = git://github.com/mattn/zencoding-vim.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = git://github.com/jayferd/vim-coffee-script.git
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
+	url = git://github.com/fholgado/minibufexpl.vim.git
