@@ -7,3 +7,6 @@
 [submodule "bundle/minibufexpl"]
 	path = bundle/minibufexpl
 	url = git://github.com/fholgado/minibufexpl.vim.git
+[submodule "bundles/lusty"]
+	path = bundles/lusty
+	url = git://github.com/sjbach/lusty.git
