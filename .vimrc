@@ -46,7 +46,7 @@ set formatoptions=qrn1
 "set colorcolumn=85
 
 "Set color scheme
-" set t_Co=256
+set t_Co=256
 colorscheme wombat
 
 set background=dark
