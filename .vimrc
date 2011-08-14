@@ -142,12 +142,18 @@ endif
 
 set wildignore+=*.o,*.obj,.git,public/dojo-release**,public/javascript/dojoroot/**,public/images/**,*.css,public/img/**,public/css/**
 
-"":set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
 set statusline=
 set statusline+=%#MatchParen#
 set statusline+=%*
 set statusline+=%F
-set statusline+=\ %l:%v
+set statusline+=\ %l,%v
 set statusline+=\ %#DiffChange#
 set statusline+=\ %p%%
-set statusline+=\ %{fugitive#statusline()}\ %Y
+set statusline+=%=
+set statusline+=\ %{fugitive#statusline()}
+set statusline+=\ \ %Y
+
+set makeprg=pylint\ --reports=n\ --output-format=parseable\ %:p
+set errorformat=%f:%l:\ %m
+
+set guioptions-=T
