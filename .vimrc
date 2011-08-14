@@ -104,20 +104,19 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1
 
 " http://blog.dispatched.ch/2009/05/24/vim-as-python-ide/"
+
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-let g:pep8_map='<leader>8'
+"autocmd FileType python setlocal omnifunc=pysmell#Complete
 
-" Pablo picante
 highlight RedundantWhitespace ctermbg=red guibg=red
 match RedundantWhitespace /\s\+$\| \+\ze\t/
 
-nnoremap <silent> T :TaskList<CR>
-nnoremap <silent> <F9> :set number!<CR>
-nnoremap <silent> <F10> :TlistToggle<CR>
-nnoremap <silent> <F11> :NERDTreeToggle<CR>
+map <leader>k :TaskList<CR>
+map <leader>l :TlistToggle<CR>
 map <leader>n :NERDTreeToggle<CR>
+let g:pep8_map='<leader>8'
 
 let NERDTreeIgnore          =   ['\.pyc$','\.swp$','\.o$']
 let NERDTreeMouseMode       =   3                     "single-click to open files/nodes
@@ -137,6 +136,18 @@ augroup myfiletypes
   autocmd FileType js set ts=4 sts=4 sw=4 et
 augroup END
 
-if has("gui_running") 
-    highlight SpellBad term=underline gui=undercurl guisp=Orange 
-endif 
+if has("gui_running")
+    highlight SpellBad term=underline gui=undercurl guisp=Orange
+endif
+
+set wildignore+=*.o,*.obj,.git,public/dojo-release**,public/javascript/dojoroot/**,public/images/**,*.css,public/img/**,public/css/**
+
+"":set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+set statusline=
+set statusline+=%#MatchParen#
+set statusline+=%*
+set statusline+=%F
+set statusline+=\ %l:%v
+set statusline+=\ %#DiffChange#
+set statusline+=\ %p%%
+set statusline+=\ %{fugitive#statusline()}\ %Y
