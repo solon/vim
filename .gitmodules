@@ -10,3 +10,6 @@
 [submodule "bundles/lusty"]
 	path = bundles/lusty
 	url = git://github.com/sjbach/lusty.git
+[submodule "bundle/mustache"]
+	path = bundle/mustache
+	url = git://github.com/juvenn/mustache.vim.git

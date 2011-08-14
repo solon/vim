@@ -1,4 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/brian/Dropbox/Work/Freelance/Science Gallery/Visitor Experience/workspace/humanplus/components/ivr_production'
 let g:netrw_dirhist_2='/Users/brian/Dropbox/Work/Freelance/Science Gallery/Visitor Experience/workspace/humanplus/components/disabled/ivr_revised'
+let g:netrw_dirhist_3='/Volumes/Glidebooks/glidebooks/dev/backend/www/webapp/webapp/templates/account/settings'
+let g:netrw_dirhist_4='/Users/brian/Repositories/fieldaware/dev/backend/www/admin/admin/public'
+let g:netrw_dirhist_5='/Users/brian/Repositories/fieldaware/dev/backend/www/admin/admin/public/stylesheets'
+let g:netrw_dirhist_6='/Users/brian/Repositories/fieldaware/dev/backend/www/admin/admin/public/stylesheets/sass'
+let g:netrw_dirhist_7='/Users/brian/Repositories/fieldaware/dev/backend/www/admin/admin/public/stylesheets/sass/partials'
+let g:netrw_dirhist_8='/Users/brian/Repositories/fieldaware/dev/backend/www/admin/admin/public'
