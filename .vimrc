@@ -175,3 +175,25 @@ function! s:CloseHiddenBuffers()
     endif
   endfor
 endfunction
+
+augroup vimrc_filetype
+ autocmd!
+ autocmd FileType c call s:MyCSettings()
+ "...
+ autocmd FileType vim call s:MyVimSettings()
+augroup end
+
+" Clear all comment markers (one rule for all languages)
+map _ :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:nohlsearch<CR>
+
+function! s:MyCSettings()
+  "...
+  " Insert comments markers
+  map - :s/^/\/\//<CR>:nohlsearch<CR>
+endfunction
+
+function! s:MyVimSettings()
+  "...
+  " Insert comments markers
+  map - :s/^/\"/<CR>:nohlsearch<CR>
+endfunction
