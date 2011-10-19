@@ -20,8 +20,8 @@ set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
 set number        " always show line numbers
 set tabstop=8
-set shiftwidth=4  " number of spaces to use for autoindenting
-set softtabstop=4
+set shiftwidth=2  " number of spaces to use for autoindenting
+set softtabstop=2
 set expandtab
 set textwidth=79
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
@@ -129,15 +129,26 @@ let g:user_zen_leader_key = '<c-k>'
 let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
 
+
+map <F13> :%!tidy -i -q -w 0 -xml<CR>
+
 augroup myfiletypes
   " Clear old autocmds in group
   autocmd!
   " autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,eruby,yaml,haml,mustache set ts=2 sts=2 sw=2 et
+  autocmd FileType ruby,eruby,yaml,haml,mustache,html set ts=2 sts=2 sw=2 et
   autocmd FileType c,cpp set ts=2 sts=2 sw=2 et
   autocmd FileType python,py set ts=4 sts=4 sw=4 et
-  autocmd FileType js set ts=4 sts=4 sw=4 et
+  autocmd FileType js set ts=2 sts=2 sw=2 et
 augroup END
+
+" VIM 7.3+ has support for highlighting a specified column.
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  " Emulate
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%80v.\+', -1)
+endif
 
 if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
